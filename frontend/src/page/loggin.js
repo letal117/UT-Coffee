@@ -1,29 +1,30 @@
 import React from 'react';
-import { View, Text, Image, TextInput, StyleSheet, StatusBar,Linking,TouchableOpacity } from 'react-native';
+import { View, Text, Image, TextInput, StyleSheet, StatusBar,Linking,TouchableOpacity,ScrollView } from 'react-native';
 
 
 
 
-export default function loginScreen({navigation}) {
+const LoginScreen =({navigation}) => {
   const f = () => { Linking.openURL('http://facebook.com/');
   };
   
-  const apple= () => {Linking.openURL('https://www.bing.com/ck/a?!&&p=1c3fde1a83604029JmltdHM9MTcwNzA5MTIwMCZpZ3VpZD0xZWI4MTg0Mi0xMmY0LTY2YmEtMGJiYy0wYWU0MTNlZTY3ZjkmaW5zaWQ9NTIwNA&ptn=3&ver=2&hsh=3&fclid=1eb81842-12f4-66ba-0bbc-0ae413ee67f9&psq=google&u=a1aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS5teC8&ntb=1/');
+  const apple= () => {Linking.openURL('http://apple.com/');
   };
   
-  const g = () => {Linking.openURL('http://apple.com/');
+  const g = () => {Linking.openURL('https://www.bing.com/ck/a?!&&p=1c3fde1a83604029JmltdHM9MTcwNzA5MTIwMCZpZ3VpZD0xZWI4MTg0Mi0xMmY0LTY2YmEtMGJiYy0wYWU0MTNlZTY3ZjkmaW5zaWQ9NTIwNA&ptn=3&ver=2&hsh=3&fclid=1eb81842-12f4-66ba-0bbc-0ae413ee67f9&psq=google&u=a1aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS5teC8&ntb=1/');
     
   };
 
   return (
+    <ScrollView>
     <View style={styles.container}>
       <Image source={require('../../assets/image/Lcafe.jpeg')} 
        style={styles.logo}
      />
      <Text style={styles.titulo}>UT-Coffee</Text>
-     <Text style={styles.subtitulo}>inicia sesión en tu cuenta</Text>
+     <Text style={styles.subtitulo}>Inicia sesión en tu cuenta</Text>
      <TextInput
-       placeholder="ingresatucorreo@gmail.com"
+       placeholder="correo electronico o usuario"
        style={styles.textInput}
      />
      <TextInput
@@ -32,8 +33,12 @@ export default function loginScreen({navigation}) {
        secureTextEntry={true}
      />
      <Text style={styles.forgotPassword}>¿olvidó su contraseña?</Text>
+
+     <TouchableOpacity onPress={() => navigation.navigate('vista')} style={styles.button}>
+          <Text style={styles.buttonText}>Iniciar</Text>
+        </TouchableOpacity>
    
-     <TouchableOpacity onPress={() => navigation.navigate('vista')} >
+     <TouchableOpacity onPress={() => navigation.navigate('formulario')} >
      <Text style={styles.forgotPassword}>¿no tengo una cuenta?</Text>
      <StatusBar style="auto"/>
 </TouchableOpacity>
@@ -57,7 +62,7 @@ export default function loginScreen({navigation}) {
         </View>
 
     </View>
-     
+    </ScrollView>
   );  
 }
 
@@ -101,6 +106,22 @@ const styles = StyleSheet.create({
     color:'gray',
     marginTop: 30,
   },
+  button: {
+    backgroundColor: 'black',
+    width: '50%',
+    height: 50,
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 35,
+    
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -117,3 +138,5 @@ const styles = StyleSheet.create({
   }  
 
 })
+
+export default LoginScreen;

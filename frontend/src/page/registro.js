@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, Image, TextInput, StyleSheet, StatusBar, ScrollView,SafeAreaView} from 'react-native';
-import ButtonRecup from '../components/ButtonRecup';
+import { View, Text, Image, TextInput, StyleSheet, StatusBar, ScrollView,TouchableOpacity} from 'react-native';
 
 
 
-export default function RegistroScreen() {
+
+const RegistroScreen = ({navigation}) => {
 
   return (
     <ScrollView >
@@ -33,8 +33,13 @@ export default function RegistroScreen() {
        keyboardType='phone-pad'
        style={styles.textInput}
      />
+     
+
+      <TouchableOpacity onPress={() => navigation.navigate('inicio')} style={styles.button}>
+          <Text style={styles.buttonText}>Crear cuenta</Text>
+        </TouchableOpacity>
+
      <Text style={styles.forgotPassword}>¿olvidó su contraseña?</Text>
-     <ButtonRecup/>
      <StatusBar style="auto"/>
      </View>
     </ScrollView>
@@ -79,6 +84,22 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color:'gray',
     marginTop: 30,
-  }
+  },
+  button: {
+    backgroundColor: 'black',
+    width: '50%',
+    height: 50,
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 35,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  }  
 
 })
+
+export default RegistroScreen;
