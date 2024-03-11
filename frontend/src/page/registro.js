@@ -7,7 +7,7 @@ import { View, Text, Image, TextInput, StyleSheet, StatusBar, ScrollView,Touchab
 const RegistroScreen = ({navigation}) => {
 
   return (
-    <ScrollView >
+    <ScrollView style={styles.contenedor}>
       <View style={styles.container}>
       <Image source={require('../../assets/image/Lcafe.jpeg')} 
        style={styles.logo}
@@ -47,6 +47,14 @@ const RegistroScreen = ({navigation}) => {
 }
 
 const styles = StyleSheet.create({
+  contenedor: {
+    flex: 1,
+    backgroundColor: '#E2E7F6',
+    //alignItems: 'center',
+    width: "100%",
+    height: "100%",
+    marginTop: 0,
+  },
   container: {
     flex: 1,
     backgroundColor: '#E2E7F6',
