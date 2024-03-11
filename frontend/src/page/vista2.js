@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, Image, ScrollView, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
-const VistaScreen = ({navigation}) => {
+const Vista2Screen = ({navigation}) => {
   const [searchText, setSearchText] = useState('');
 
   return (
@@ -13,45 +13,26 @@ const VistaScreen = ({navigation}) => {
         <Text style={styles.appName}>UT-COFFEES</Text>
       </View>
       <View style={styles.searchBarContainer}>
-        <TextInput
-          style={styles.searchInput}
-          placeholder="Buscar comida.."
-          value={searchText}
-          onChangeText={setSearchText}
-        />
-        <TouchableOpacity style={styles.searchButton} onPress={() => console.log('Buscar', searchText)}>
-          <Text style={styles.searchButtonText}>Buscar</Text>
-        </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.cuadro} onPress={() => navigation.navigate('vista2')}>
+      <TouchableOpacity style={styles.cuadro} onPress={() => navigation.navigate('menu')}>
         <View style={styles.imageContainer}>
           <Image
-            source={require('../../assets/image/cafeteria 1.jpg')}
+            source={require('../../assets/image/bebida 1.jpg')}
             style={styles.image}
           />
         </View>
-        <Text style={styles.title}>Doña Eloiza →</Text>
-        <Text style={styles.description}>La mejor comida rica y barata</Text>
+        <Text style={styles.title}>Bebidas →</Text>
+        <Text style={styles.description}>Las bebidas mas ricas </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.cuadro} onPress={() => navigation.navigate('menu')}>
         <View style={styles.imageContainer}>
           <Image
-            source={require('../../assets/image/cafeteria 2.png')}
+            source={require('../../assets/image/comida 1.jpg')}
             style={styles.image}
           />
         </View>
-        <Text style={styles.title}>Cafetería UT →</Text>
-        <Text style={styles.description}>Comida a un precio muy bueno</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.cuadro} onPress={() => navigation.navigate('menu')}>
-        <View style={styles.imageContainer}>
-          <Image
-            source={require('../../assets/image/cafeteria 3.jpg')}
-            style={styles.image}
-          />
-        </View>
-        <Text style={styles.title}>Doña Carmelita →</Text>
-        <Text style={styles.description}>La mejor comida que comer</Text>
+        <Text style={styles.title}>Comida →</Text>
+        <Text style={styles.description}>Las comidas mas deliciosas</Text>
       </TouchableOpacity>
     </ScrollView>
   );
@@ -86,15 +67,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20,
   },
-  searchInput: {
-    flex: 1,
-    height: '100%',
-    borderWidth: 1,
-    borderColor: 'black',
-    borderRadius: 25,
-    paddingHorizontal: 15,
-    marginRight: 8,
-  },
   searchButton: {
     backgroundColor: 'black',
     paddingVertical: 10,
@@ -106,12 +78,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   cuadro: {
+    marginTop: -20,
     backgroundColor: '#E2E7F6',
-    borderRadius: 10,
-    marginBottom: 20,
+    borderRadius: 20,
+    marginBottom: 40,
     padding: 20,
     alignItems: 'center',
-    elevation: 3,
+    elevation: 4,
     shadowColor: '#000000',
     shadowOffset: {
       width: 0,
@@ -146,4 +119,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default VistaScreen;
+export default Vista2Screen;

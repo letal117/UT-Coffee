@@ -7,6 +7,7 @@ import LoginScreen from './src/page/loggin';
 import RegistroScreen from './src/page/registro';
 import MenuScreen from './src/page/menu';
 import VistaScreen from './src/page/vista';
+import Vista2Screen from './src/page/vista2';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,8 +22,9 @@ export default function App(){
       />
       <Stack.Screen name="formulario" component={RegistroScreen}/>
       <Stack.Screen name="inicio" component={LoginScreen}/>
-      <Stack.Screen name="vista" component={VistaScreen}/>
       <Stack.Screen name="menu" component={MenuScreen}/>
+      <Stack.Screen name="vista" component={VistaScreen}/>
+      <Stack.Screen name="vista2" component={Vista2Screen}/>
     </Stack.Navigator>
   </NavigationContainer>
 
