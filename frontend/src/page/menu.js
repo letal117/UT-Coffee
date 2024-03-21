@@ -7,6 +7,9 @@ const MenuScreen = () => {
   const addToCart = (item) => {
     setCartItems([...cartItems, item]);
   };
+  const clearCart = () => {
+    setCartItems([]);
+  };
 
   return (
     <View style={styles.container}>
@@ -15,23 +18,23 @@ const MenuScreen = () => {
         <Text style={styles.sectionTitle}>Menú</Text>
         <TouchableOpacity style={styles.item} onPress={() => addToCart("Café Americano")}>
           <Text>Café Americano</Text>
-          <Text>$2.50</Text>
+          <Text>$40</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item} onPress={() => addToCart("Café Latte")}>
           <Text>Café Latte</Text>
-          <Text>$3.00</Text>
+          <Text>$45</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item} onPress={() => addToCart("Cappuccino")}>
           <Text>Cappuccino</Text>
-          <Text>$3.50</Text>
+          <Text>$50</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item} onPress={() => addToCart("Cafe Expreso")}>
           <Text>Café Expreso</Text>
-          <Text>$4.00</Text>
+          <Text>$55</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item} onPress={() => addToCart("Cafe Moka")}>
           <Text>Café Moka</Text>
-          <Text>$4.50</Text>
+          <Text>$60</Text>
         </TouchableOpacity>
         {/* Otros elementos del menú */}
       </ScrollView>
@@ -39,7 +42,11 @@ const MenuScreen = () => {
         <Text style={styles.sectionTitle}>Carrito de Compras</Text>
         {cartItems.map((item, index) => (
           <Text key={index}>{item}</Text>
+          
         ))}
+         <TouchableOpacity style={styles.clearButton} onPress={() => clearCart()}>
+          <Text style={styles.clearButtonText}>Limpiar Carrito</Text>
+          </TouchableOpacity>
       </View>
     </View>
   );
@@ -78,11 +85,30 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
+    fontWeight: 'bold',
   },
   cartContainer: {
     borderTopWidth: 1,
     borderTopColor: '#ccc',
     paddingTop: 20,
+  },
+  clearButtonText: {
+    color: '#ffffff',
+    fontSize: 16,
+    textAlign: 'center',
+  },
+  clearButton: {
+    backgroundColor: 'black',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 25,
+    marginTop: 10,
+  },
+  total: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 10,
+    color: '#8d4925',
   },
 });
 
