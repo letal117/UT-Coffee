@@ -14,7 +14,7 @@ const Vista4Screen = ({navigation}) => {
       </View>
       <View style={styles.searchBarContainer}>
       </View>
-      <TouchableOpacity style={styles.cuadro} onPress={() => navigation.navigate('menu')}>
+      <TouchableOpacity style={styles.cuadro} onPress={() => navigation.navigate('menu5')}>
         <View style={styles.imageContainer}>
           <Image
             source={require('../../assets/image/bebida 1.jpg')}
@@ -24,7 +24,7 @@ const Vista4Screen = ({navigation}) => {
         <Text style={styles.title}>Bebidas →</Text>
         <Text style={styles.description}>Las bebidas mas ricas </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.cuadro} onPress={() => navigation.navigate('menu')}>
+      <TouchableOpacity style={styles.cuadro} onPress={() => navigation.navigate('menu6')}>
         <View style={styles.imageContainer}>
           <Image
             source={require('../../assets/image/comida 1.jpg')}

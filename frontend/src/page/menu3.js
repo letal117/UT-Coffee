@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView,} from 'react-native';
 
-const MenuScreen = () => {
+const Menu3Screen = () => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (item) => {
@@ -16,20 +16,20 @@ const MenuScreen = () => {
       <Text style={styles.title}>UT-Coffee</Text>
       <ScrollView style={styles.menuContainer}>
         <Text style={styles.sectionTitle}>Menú</Text>
+        <TouchableOpacity style={styles.item} onPress={() => addToCart("Agua")}>
+          <Text>Agua</Text>
+          <Text>$18</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.item} onPress={() => addToCart("Agua 2")}>
+          <Text>Agua Mineral</Text>
+          <Text>$19</Text>
+        </TouchableOpacity>
         <TouchableOpacity style={styles.item} onPress={() => addToCart("Jamaica")}>
           <Text>Agua de Jamaica</Text>
           <Text>$20</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item} onPress={() => addToCart("Horchata")}>
           <Text>Agua de Horchata</Text>
-          <Text>$20</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.item} onPress={() => addToCart("Pepino")}>
-          <Text>Agua de Pepino</Text>
-          <Text>$20</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.item} onPress={() => addToCart("Té")}>
-          <Text>Agua de Té</Text>
           <Text>$20</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item} onPress={() => addToCart("Refresco")}>
@@ -48,9 +48,9 @@ const MenuScreen = () => {
           <Text>Cristal de Fresa</Text>
           <Text>$18</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.item} onPress={() => addToCart("Refresco Fresca")}>
-          <Text>Fresca</Text>
-          <Text>$18</Text>
+        <TouchableOpacity style={styles.item} onPress={() => addToCart("bebida")}>
+          <Text>Fuze Tea</Text>
+          <Text>$20</Text>
         </TouchableOpacity>
         {/* Otros elementos del menú */}
       </ScrollView>
@@ -128,4 +128,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MenuScreen;
+export default Menu3Screen;

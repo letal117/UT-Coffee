@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView,} from 'react-native';
 
-const MenuScreen = () => {
+const Menu5Screen = () => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (item) => {
@@ -24,12 +24,12 @@ const MenuScreen = () => {
           <Text>Agua de Horchata</Text>
           <Text>$20</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.item} onPress={() => addToCart("Pepino")}>
-          <Text>Agua de Pepino</Text>
+        <TouchableOpacity style={styles.item} onPress={() => addToCart("Sandia")}>
+          <Text>Agua de Sandia</Text>
           <Text>$20</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.item} onPress={() => addToCart("Té")}>
-          <Text>Agua de Té</Text>
+        <TouchableOpacity style={styles.item} onPress={() => addToCart("Mango")}>
+          <Text>Agua de Mango</Text>
           <Text>$20</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item} onPress={() => addToCart("Refresco")}>
@@ -48,9 +48,9 @@ const MenuScreen = () => {
           <Text>Cristal de Fresa</Text>
           <Text>$18</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.item} onPress={() => addToCart("Refresco Fresca")}>
-          <Text>Fresca</Text>
-          <Text>$18</Text>
+        <TouchableOpacity style={styles.item} onPress={() => addToCart("Refresco 7")}>
+          <Text>Pepsi</Text>
+          <Text>$20</Text>
         </TouchableOpacity>
         {/* Otros elementos del menú */}
       </ScrollView>
@@ -128,4 +128,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MenuScreen;
+export default Menu5Screen;
